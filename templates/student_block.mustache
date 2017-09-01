@@ -1,0 +1,14 @@
+{{#count_sessions}}
+<dl class="block-apsolu-badge-dl">
+	{{#sessions}}
+	<div class="block-apsolu-badge-div">
+		<dt class="block-apsolu-badge-dt">{{str_date}}</dt>
+		<dd class="block-apsolu-badge-dd {{css_status}}">{{str_status}}</dd>
+	</div>
+	{{/sessions}}
+</dl>
+{{/count_sessions}}
+
+{{^sessions}}
+	<p class="alert-info text-center">Aucun créneau défini</p>
+{{/sessions}}

@@ -1,0 +1,18 @@
+<p id="block-apsolu-badge-action" class="text-center"><a href="{{wwwroot}}/local/apsolu/attendance/edit.php?courseid={{courseid}}" class="btn btn-primary btn-xs">Prendre les présences</a></p>
+
+<hr />
+
+{{#count_sessions}}
+<dl class="block-apsolu-badge-dl">
+	{{#sessions}}
+	<div class="block-apsolu-badge-div">
+		<dt class="block-apsolu-badge-dt">{{str_date}}</dt>
+		<dd class="block-apsolu-badge-dd">{{presences}} présence(s)</dd>
+	</div>
+	{{/sessions}}
+</dl>
+{{/count_sessions}}
+
+{{^sessions}}
+	<p class="alert-info text-center">Aucun créneau défini</p>
+{{/sessions}}

@@ -1,0 +1,13 @@
+#block-apsolu-badge-action {
+    margin: .5em 0;
+}
+
+.block-apsolu-badge-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.block-apsolu-badge-dt,
+.block-apsolu-badge-dd {
+    display: inline;
+}
