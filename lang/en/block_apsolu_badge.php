@@ -26,16 +26,3 @@ $string['pluginname'] = 'Prise des présences de cours';
 
 $string['apsolu_badge:addinstance'] = 'Ajouter un bloc '.$string['pluginname'];
 $string['apsolu_badge:myaddinstance'] = 'Ajouter un nouveau bloc '.$string['pluginname'].' au tableau de bord';
-
-$string['noupcomingevents'] = 'Aucun rendez-vous à venir';
-
-$string['presessions'] = 'Séances de pré-rentrée';
-$string['presessionsnotice'] = '<div class="alert alert-info">'.
-    '<p><strong>Si vous n\'avez pu vous pré-inscrire que sur liste complémentaire :</strong></p>'.
-    '<p>Tout n\'est pas perdu ! 2 possiblités :</p>'.
-    '<ul>'.
-    '<li>Vous pouvez tenter de vous présenter au 1er cours (sans garantie d\'obtenir une place).</li>'.
-    '<li>Vous attendez ; l\'enseignant pourra vous notifier par mail si une place s\'est libérée et s\'il peut vous accueillir. N\'oubliez pas de consulter votre adresse mail universitaire !</li>'.
-    '</ul>'.
-    '</div>';
-$string['sessions'] = 'Séances hebdomadaires';
