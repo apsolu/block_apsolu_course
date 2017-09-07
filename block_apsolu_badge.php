@@ -101,12 +101,31 @@ class block_apsolu_badge extends block_base {
                 $count_sessions++;
             }
 
+            $enrols = array();
+            $count_enrols = 0;
+            $params = array(
+                'enrol' => 'select',
+                'status' => 0,
+                'courseid' => $this->page->course->id,
+                );
+
+            foreach ($DB->get_records('enrol', $params) as $enrol) {
+                if (empty($enrol->name) === true) {
+                    $enrol->name = 'Gérer mes étudiants';
+                }
+
+                $enrols[] = $enrol;
+                $count_enrols++;
+            }
+
             // Template data.
             $data = new stdClass();
             $data->wwwroot = $CFG->wwwroot;
             $data->courseid = $context->instanceid;
             $data->sessions = $sessions;
             $data->count_sessions = $count_sessions;
+            $data->enrols = $enrols;
+            $data->count_enrols = $count_enrols;
 
             $template = 'block_apsolu_badge/teacher_block';
         } else {
