@@ -26,3 +26,7 @@ $string['pluginname'] = 'Prise des présences de cours';
 
 $string['apsolu_badge:addinstance'] = 'Ajouter un bloc '.$string['pluginname'];
 $string['apsolu_badge:myaddinstance'] = 'Ajouter un nouveau bloc '.$string['pluginname'].' au tableau de bord';
+
+$string['no_session'] = 'Aucun créneau défini';
+$string['set_presences'] = 'Prendre les présences';
+$string['manage_my_students'] = 'Gérer mes étudiants';
