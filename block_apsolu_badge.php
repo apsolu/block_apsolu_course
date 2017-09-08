@@ -125,6 +125,9 @@ class block_apsolu_badge extends block_base {
             $data->sessions = $sessions;
             $data->count_sessions = $count_sessions;
             $data->enrols = $enrols;
+            if ($count_enrols !== 0) {
+                $data->enrolid = $enrols[0]->id;
+            }
             $data->count_enrols = $count_enrols;
 
             $template = 'block_apsolu_badge/teacher_block';
