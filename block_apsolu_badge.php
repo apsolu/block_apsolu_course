@@ -139,9 +139,10 @@ class block_apsolu_badge extends block_base {
             $sql = "SELECT sessions.*, status.name, status.code".
                 " FROM {apsolu_attendance_sessions} sessions".
                 " LEFT JOIN {apsolu_attendance_presences} presences ON sessions.id = presences.sessionid".
-                " LEFT JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid AND presences.studentid = :userid".
+                " LEFT JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid".
                 " WHERE sessions.courseid = :courseid".
                 " AND sessions.sessiontime < :time".
+                " AND (presences.studentid = :userid OR presences.studentid IS NULL)".
                 " ORDER BY sessions.sessiontime";
             $params = array(
                 'courseid' => $context->instanceid,
