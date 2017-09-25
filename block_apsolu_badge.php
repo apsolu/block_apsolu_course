@@ -139,10 +139,9 @@ class block_apsolu_badge extends block_base {
             $sql = "SELECT sessions.*, status.name, status.code".
                 " FROM {apsolu_attendance_sessions} sessions".
                 " LEFT JOIN {apsolu_attendance_presences} presences ON sessions.id = presences.sessionid".
-                " LEFT JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid".
+                " LEFT JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid AND presences.studentid = :userid".
                 " WHERE sessions.courseid = :courseid".
                 " AND sessions.sessiontime < :time".
-                " AND presences.studentid = :userid".
                 " ORDER BY sessions.sessiontime";
             $params = array(
                 'courseid' => $context->instanceid,
@@ -165,9 +164,12 @@ class block_apsolu_badge extends block_base {
                         $session->str_status = get_string($session->code, 'local_apsolu');
                         $session->css_status = 'text-info';
                         break;
-                    default:
-                        $session->str_status = get_string('attendance_absent', 'local_apsolu');
+                    case 'absent':
+                        $session->str_status = get_string($session->code, 'local_apsolu');
                         $session->css_status = 'text-danger';
+                    default:
+                        $session->str_status = get_string('attendance_undefined', 'local_apsolu');
+                        $session->css_status = 'text-left';
                 }
 
                 $sessions[] = $session;
