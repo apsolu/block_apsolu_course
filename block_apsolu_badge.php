@@ -168,6 +168,7 @@ class block_apsolu_badge extends block_base {
                     case 'absent':
                         $session->str_status = get_string($session->code, 'local_apsolu');
                         $session->css_status = 'text-danger';
+                        break;
                     default:
                         $session->str_status = get_string('attendance_undefined', 'local_apsolu');
                         $session->css_status = 'text-left';
