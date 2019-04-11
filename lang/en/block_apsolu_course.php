@@ -17,15 +17,15 @@
 /**
  * Language strings.
  *
- * @package    block_apsolu_badge
+ * @package    block_apsolu_course
  * @copyright  2016 Université Rennes 2 <dsi-contact@univ-rennes2.fr>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['pluginname'] = 'Prise des présences de cours';
 
-$string['apsolu_badge:addinstance'] = 'Ajouter un bloc '.$string['pluginname'];
-$string['apsolu_badge:myaddinstance'] = 'Ajouter un nouveau bloc '.$string['pluginname'].' au tableau de bord';
+$string['apsolu_course:addinstance'] = 'Ajouter un bloc '.$string['pluginname'];
+$string['apsolu_course:myaddinstance'] = 'Ajouter un nouveau bloc '.$string['pluginname'].' au tableau de bord';
 
 $string['no_session'] = 'Aucun créneau défini';
 $string['set_presences'] = 'Prendre les présences';

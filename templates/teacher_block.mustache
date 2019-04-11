@@ -1,5 +1,5 @@
 {{#count_enrols}}
-<p class="text-center"><a href="{{wwwroot}}/enrol/select/manage.php?enrolid={{enrolid}}" class="btn btn-primary btn-xs">{{#str}}manage_my_students, block_apsolu_badge{{/str}}</a></p>
+<p class="text-center"><a href="{{wwwroot}}/enrol/select/manage.php?enrolid={{enrolid}}" class="btn btn-primary btn-xs">{{#str}}manage_my_students, block_apsolu_course{{/str}}</a></p>
 <!--
 <ul class="list-inline text-center">
 	{{#enrols}}
@@ -10,7 +10,7 @@
 {{/count_enrols}}
 <hr />
 
-<p id="block-apsolu-badge-action" class="text-center"><a href="{{wwwroot}}/local/apsolu/attendance/edit.php?courseid={{courseid}}" class="btn btn-primary btn-xs">{{#str}}set_presences, block_apsolu_badge{{/str}}</a></p>
+<p id="block-apsolu-badge-action" class="text-center"><a href="{{wwwroot}}/local/apsolu/attendance/edit.php?courseid={{courseid}}" class="btn btn-primary btn-xs">{{#str}}set_presences, block_apsolu_course{{/str}}</a></p>
 
 <hr />
 
@@ -26,5 +26,5 @@
 {{/count_sessions}}
 
 {{^sessions}}
-	<p class="alert-info text-center">{{#str}}no_session, block_apsolu_badge{{/str}}</p>
+	<p class="alert-info text-center">{{#str}}no_session, block_apsolu_course{{/str}}</p>
 {{/sessions}}

@@ -17,18 +17,18 @@
 /**
  * Handles displaying the upcoming events block.
  *
- * @package    block_apsolu_badge
+ * @package    block_apsolu_course
  * @copyright  2016 Université Rennes 2 <dsi-contact@univ-rennes2.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-class block_apsolu_badge extends block_base {
+class block_apsolu_course extends block_base {
 
     /**
      * Initialise the block.
      */
     public function init() {
-        $this->title = get_string('pluginname', 'block_apsolu_badge');
+        $this->title = get_string('pluginname', 'block_apsolu_course');
     }
 
     /**
@@ -130,7 +130,7 @@ class block_apsolu_badge extends block_base {
             }
             $data->count_enrols = $count_enrols;
 
-            $template = 'block_apsolu_badge/teacher_block';
+            $template = 'block_apsolu_course/teacher_block';
         } else {
             // This is a student.
             $sessions = array();
@@ -185,7 +185,7 @@ class block_apsolu_badge extends block_base {
             $data->sessions = $sessions;
             $data->count_sessions = $count_sessions;
 
-            $template = 'block_apsolu_badge/student_block';
+            $template = 'block_apsolu_course/student_block';
         }
 
         // Display template.

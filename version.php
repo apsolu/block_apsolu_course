@@ -17,7 +17,7 @@
 /**
  * Version details.
  *
- * @package    block_apsolu_badge
+ * @package    block_apsolu_course
  * @copyright  2016 Université Rennes 2 <dsi-contact@univ-rennes2.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -31,7 +31,7 @@ $plugin->version   = 2017063000;
 $plugin->requires  = 2015111000;
 
 // Full name of the plugin (used for diagnostics).
-$plugin->component = 'block_apsolu_badge';
+$plugin->component = 'block_apsolu_course';
 
 // Dependencies on another plugin.
 $plugin->dependencies = array(
