@@ -28,7 +28,7 @@ class block_apsolu_course extends block_base {
      * Initialise the block.
      */
     public function init() {
-        $this->title = get_string('pluginname', 'block_apsolu_course');
+        $this->title = get_string('title', 'block_apsolu_course');
     }
 
     /**

@@ -22,7 +22,8 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Prise des présences de cours';
+$string['pluginname'] = 'APSOLU: gestion des inscriptions et des présences de cours';
+$string['title'] = 'Présences de cours';
 
 $string['apsolu_course:addinstance'] = 'Ajouter un bloc '.$string['pluginname'];
 $string['apsolu_course:myaddinstance'] = 'Ajouter un nouveau bloc '.$string['pluginname'].' au tableau de bord';
