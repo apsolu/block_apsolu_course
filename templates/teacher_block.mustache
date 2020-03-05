@@ -1,3 +1,67 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_apsolu_course/teacher_block
+
+    Template Moodle pour afficher les présences d'un cours.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * wwwroot Correspond à la valeur de la variable Moodle $CFG->wwwroot.
+    * count_enrols Nombre de méthodes d'inscription enrol_select dans ce cours.
+    * enrols Méthodes d'inscription enrol_select dans ce cours.
+      * id Identifiant de l'instance.
+      * name Nom de l'instance.
+    * count_sessions Nombre de sessions prévues dans ce cours.
+    * sessions Sessions prévues dans ce cours.
+      * str_date Chaîne de caractères représentant la date de la session.
+      * presences Nombre total de présences pour à la session.
+
+    Example context (json):
+    {
+      "wwwroot": "https://apsolu.fr",
+      "count_enrols": "2",
+      "enrols": [
+        {
+        "id": 340,
+        "name": "Semestre 1"
+        },
+        {
+        "id": 341,
+        "name": "Semestre 2"
+        }
+      ],
+      "count_sessions": "2",
+      "sessions": [
+        {
+        "str_date": "21 févr. 20",
+        "presences": "14"
+        },
+        {
+        "str_date": "6 mars 20",
+        "presences": "0"
+        }]
+    }
+}}
 {{#count_enrols}}
 <p class="text-center"><a href="{{wwwroot}}/enrol/select/manage.php?enrolid={{enrolid}}" class="btn btn-primary btn-xs">{{#str}}manage_my_students, block_apsolu_course{{/str}}</a></p>
 <!--
