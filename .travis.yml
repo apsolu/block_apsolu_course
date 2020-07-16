@@ -58,8 +58,8 @@ before_install:
 # This disables XDebug which should speed up the build.
   - phpenv config-rm xdebug.ini
 # This installs NodeJS which is used by Grunt, etc.
-  - nvm install 8.9
-  - nvm use 8.9
+  - nvm install 14.2.0
+  - nvm use 14.2.0
 # Currently we are inside of the clone of your repository.  We move up two
 # directories to build the project.
   - cd ../..
@@ -115,7 +115,7 @@ script:
   - moodle-plugin-ci grunt
 # This step runs the PHPUnit tests of your plugin.  If your plugin has
 # PHPUnit tests, then it is highly recommended that you keep this step.
-  - moodle-plugin-ci phpunit
+  - moodle-plugin-ci phpunit --coverage-clover
 # This step runs the Behat tests of your plugin.  If your plugin has
 # Behat tests, then it is highly recommended that you keep this step.
 # There are two important options that you may want to use:
@@ -126,3 +126,6 @@ script:
 #   - The suite option allows you to set the theme to use for behat test. If
 #     not specified, the default theme is used, EG usage: --suite boost
   - moodle-plugin-ci behat
+
+after_success:
+  - moodle-plugin-ci coveralls-upload
