@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/apsolu/block_apsolu_course.svg?branch=master)](https://travis-ci.org/apsolu/block_apsolu_course)
 [![Coverage Status](https://coveralls.io/repos/github/apsolu/block_apsolu_course/badge.svg?branch=master)](https://coveralls.io/github/apsolu/block_apsolu_course?branch=master)
-[![Moodle Status](https://img.shields.io/badge/moodle-3.9-blue)](https://moodle.org)
+[![Moodle Status](https://img.shields.io/badge/moodle-3.11-blue)](https://moodle.org)
 
 ## Description
 
