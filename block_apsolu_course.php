@@ -183,13 +183,13 @@ class block_apsolu_course extends block_base {
         $sessions = array();
         $countsessions = 0;
 
-        $sql = "SELECT sessions.*, COUNT(presences.id) AS presences".
-            " FROM {apsolu_attendance_sessions} sessions".
-            " LEFT JOIN {apsolu_attendance_presences} presences ON sessions.id = presences.sessionid AND presences.statusid IN (1,2)".
-            " WHERE sessions.courseid = :courseid".
-            " AND sessions.sessiontime < :time".
-            " GROUP BY sessions.id".
-            " ORDER BY sessions.sessiontime";
+        $sql = "SELECT s.*, COUNT(p.id) AS presences".
+            " FROM {apsolu_attendance_sessions} s".
+            " LEFT JOIN {apsolu_attendance_presences} p ON s.id = p.sessionid AND p.statusid IN (1, 2)".
+            " WHERE s.courseid = :courseid".
+            " AND s.sessiontime < :time".
+            " GROUP BY s.id".
+            " ORDER BY s.sessiontime";
         $params = array(
             'courseid' => $context->instanceid,
             'time' => (time() + 8 * 7 * 24 * 60 * 60),

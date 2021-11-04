@@ -24,6 +24,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+global $CFG;
+
+require_once($CFG->dirroot.'/blocks/moodleblock.class.php');
+require_once($CFG->dirroot.'/blocks/apsolu_course/block_apsolu_course.php');
+
 /**
  * Classe PHPUnit permettant de tester la classe block_apsolu_course.
  *
@@ -31,5 +36,10 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_apsolu_course_test extends advanced_testcase {
+    public function test_init() {
+        $block = new block_apsolu_course();
+        $block->init();
 
+        $this->assertSame(get_string('title', 'block_apsolu_course'), $block->title);
+    }
 }
