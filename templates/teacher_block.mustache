@@ -63,7 +63,7 @@
     }
 }}
 {{#count_enrols}}
-<p class="text-center"><a href="{{wwwroot}}/enrol/select/manage.php?enrolid={{enrolid}}" class="btn btn-primary btn-xs">{{#str}}manage_my_students, block_apsolu_course{{/str}}</a></p>
+<p class="text-center"><a href="{{wwwroot}}/enrol/select/manage.php?enrolid={{enrolid}}" class="btn btn-primary btn-xs" id="block-apsolu-course-edit-enrol-a">{{#str}}manage_my_students, block_apsolu_course{{/str}}</a></p>
 <!--
 <ul class="list-inline text-center">
 	{{#enrols}}
@@ -74,7 +74,7 @@
 {{/count_enrols}}
 <hr />
 
-<p id="block-apsolu-badge-action" class="text-center"><a href="{{wwwroot}}/local/apsolu/attendance/edit.php?courseid={{courseid}}" class="btn btn-primary btn-xs">{{#str}}set_presences, block_apsolu_course{{/str}}</a></p>
+<p id="block-apsolu-badge-action" class="text-center"><a href="{{wwwroot}}/local/apsolu/attendance/edit.php?courseid={{courseid}}" class="btn btn-primary btn-xs" id="block-apsolu-course-edit-attendance-a">{{#str}}set_presences, block_apsolu_course{{/str}}</a></p>
 
 <hr />
 
