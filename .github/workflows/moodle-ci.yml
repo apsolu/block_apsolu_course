@@ -13,7 +13,7 @@ jobs:
   # when a job name is not provided.
   test:
     # Virtual environment to use.
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     # DB services you need for testing.
     services:
@@ -37,8 +37,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.3']
-        moodle-branch: ['MOODLE_311_STABLE']
+        php: ['7.4']
+        moodle-branch: ['MOODLE_400_STABLE']
         database: [mariadb]
 
     # There is an alterantive way allowing to define explicitly define which php, moodle-branch

@@ -22,8 +22,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Classe représentant le bloc block_apsolu_course.
  *
@@ -119,14 +117,14 @@ class block_apsolu_course extends block_base {
         $sessions = array();
         $countsessions = 0;
 
-        $sql = "SELECT sessions.*, status.name, status.code".
-            " FROM {apsolu_attendance_sessions} sessions".
-            " LEFT JOIN {apsolu_attendance_presences} presences ON sessions.id = presences.sessionid".
-            " LEFT JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid".
-            " WHERE sessions.courseid = :courseid".
-            " AND sessions.sessiontime < :time".
-            " AND (presences.studentid = :userid OR presences.studentid IS NULL)".
-            " ORDER BY sessions.sessiontime";
+        $sql = "SELECT sessions.*, status.name, status.code
+                  FROM {apsolu_attendance_sessions} sessions
+             LEFT JOIN {apsolu_attendance_presences} presences ON sessions.id = presences.sessionid
+             LEFT JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid
+                 WHERE sessions.courseid = :courseid
+                   AND sessions.sessiontime < :time
+                   AND (presences.studentid = :userid OR presences.studentid IS NULL)
+              ORDER BY sessions.sessiontime";
         $params = array(
             'courseid' => $context->instanceid,
             'time' => (time() + 8 * 7 * 24 * 60 * 60),
@@ -183,13 +181,13 @@ class block_apsolu_course extends block_base {
         $sessions = array();
         $countsessions = 0;
 
-        $sql = "SELECT s.*, COUNT(p.id) AS presences".
-            " FROM {apsolu_attendance_sessions} s".
-            " LEFT JOIN {apsolu_attendance_presences} p ON s.id = p.sessionid AND p.statusid IN (1, 2)".
-            " WHERE s.courseid = :courseid".
-            " AND s.sessiontime < :time".
-            " GROUP BY s.id".
-            " ORDER BY s.sessiontime";
+        $sql = "SELECT s.*, COUNT(p.id) AS presences
+                  FROM {apsolu_attendance_sessions} s
+             LEFT JOIN {apsolu_attendance_presences} p ON s.id = p.sessionid AND p.statusid IN (1, 2)
+                 WHERE s.courseid = :courseid
+                   AND s.sessiontime < :time
+              GROUP BY s.id
+              ORDER BY s.sessiontime";
         $params = array(
             'courseid' => $context->instanceid,
             'time' => (time() + 8 * 7 * 24 * 60 * 60),

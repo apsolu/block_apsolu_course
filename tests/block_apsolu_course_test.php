@@ -22,6 +22,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace block_apsolu_course;
+
+use advanced_testcase;
+use block_apsolu_course;
+
 defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
@@ -36,6 +41,13 @@ require_once($CFG->dirroot.'/blocks/apsolu_course/block_apsolu_course.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_apsolu_course_test extends advanced_testcase {
+    /**
+     * Teste la méthode init().
+     *
+     * @covers \block_apsolu_course::init()
+     *
+     * @return void
+     */
     public function test_init() {
         $block = new block_apsolu_course();
         $block->init();
