@@ -117,7 +117,7 @@ class block_apsolu_course extends block_base {
         $sessions = array();
         $countsessions = 0;
 
-        $sql = "SELECT sessions.*, status.name, status.code
+        $sql = "SELECT sessions.*, status.longlabel, status.color
                   FROM {apsolu_attendance_sessions} sessions
              LEFT JOIN {apsolu_attendance_presences} presences ON sessions.id = presences.sessionid
              LEFT JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid
@@ -133,26 +133,12 @@ class block_apsolu_course extends block_base {
         foreach ($DB->get_records_sql($sql, $params) as $session) {
             $session->str_date = userdate($session->sessiontime, '%d %b %y');
 
-            switch ($session->name) {
-                case 'present':
-                    $session->str_status = get_string($session->code, 'local_apsolu');
-                    $session->css_status = 'text-success';
-                    break;
-                case 'late':
-                    $session->str_status = get_string($session->code, 'local_apsolu');
-                    $session->css_status = 'text-warning';
-                    break;
-                case 'excused':
-                    $session->str_status = get_string($session->code, 'local_apsolu');
-                    $session->css_status = 'text-info';
-                    break;
-                case 'absent':
-                    $session->str_status = get_string($session->code, 'local_apsolu');
-                    $session->css_status = 'text-danger';
-                    break;
-                default:
-                    $session->str_status = get_string('attendance_undefined', 'local_apsolu');
-                    $session->css_status = 'text-left';
+            if (empty($session->longlabel) === false) {
+                $session->str_status = $session->longlabel;
+                $session->css_status = sprintf('text-%s', $session->color);
+            } else {
+                $session->str_status = get_string('attendance_undefined', 'local_apsolu');
+                $session->css_status = 'text-left';
             }
 
             $sessions[] = $session;
