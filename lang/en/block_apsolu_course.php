@@ -28,6 +28,6 @@ $string['title'] = 'Présences de cours';
 $string['apsolu_course:addinstance'] = 'Ajouter un bloc '.$string['pluginname'];
 $string['apsolu_course:myaddinstance'] = 'Ajouter un nouveau bloc '.$string['pluginname'].' au tableau de bord';
 
-$string['no_session'] = 'Aucune session définie';
+$string['no_session'] = 'Aucune session à venir dans les 8 prochaines semaines';
 $string['set_presences'] = 'Prendre les présences';
 $string['manage_my_students'] = 'Gérer mes étudiants';
