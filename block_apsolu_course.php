@@ -117,25 +117,31 @@ class block_apsolu_course extends block_base {
         $sessions = array();
         $countsessions = 0;
 
-        $sql = "SELECT sessions.*, status.longlabel, status.color
+        // Récupère toutes les présences de l'utilisateur.
+        $sql = "SELECT presences.sessionid, status.longlabel, status.color
+                  FROM {apsolu_attendance_presences} presences
+                  JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid
+                 WHERE presences.studentid = :userid";
+        $params = ['userid' => $USER->id];
+        $params = ['userid' => 71717];
+        $presences = $DB->get_records_sql($sql, $params);
+
+        // Récupère toutes les sessions du cours passées et des 4 prochaines semaines à venir.
+        $sql = "SELECT sessions.*
                   FROM {apsolu_attendance_sessions} sessions
-             LEFT JOIN {apsolu_attendance_presences} presences ON sessions.id = presences.sessionid
-             LEFT JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid
                  WHERE sessions.courseid = :courseid
                    AND sessions.sessiontime < :time
-                   AND (presences.studentid = :userid OR presences.studentid IS NULL)
               ORDER BY sessions.sessiontime";
         $params = array(
             'courseid' => $context->instanceid,
             'time' => (time() + 8 * 7 * 24 * 60 * 60),
-            'userid' => $USER->id,
             );
         foreach ($DB->get_records_sql($sql, $params) as $session) {
             $session->str_date = userdate($session->sessiontime, '%d %b %y');
 
-            if (empty($session->longlabel) === false) {
-                $session->str_status = $session->longlabel;
-                $session->css_status = sprintf('text-%s', $session->color);
+            if (isset($presences[$session->id]) === true) {
+                $session->str_status = $presences[$session->id]->longlabel;
+                $session->css_status = sprintf('text-%s', $presences[$session->id]->color);
             } else {
                 $session->str_status = get_string('attendance_undefined', 'local_apsolu');
                 $session->css_status = 'text-left';
