@@ -123,7 +123,6 @@ class block_apsolu_course extends block_base {
                   JOIN {apsolu_attendance_statuses} status ON status.id = presences.statusid
                  WHERE presences.studentid = :userid";
         $params = ['userid' => $USER->id];
-        $params = ['userid' => 71717];
         $presences = $DB->get_records_sql($sql, $params);
 
         // Récupère toutes les sessions du cours passées et des 4 prochaines semaines à venir.
