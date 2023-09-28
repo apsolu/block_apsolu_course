@@ -41,7 +41,7 @@ class block_apsolu_course extends block_base {
      * Applicable only in course context.
      */
     public function applicable_formats() {
-        return array('course-view' => true);
+        return ['course-view' => true];
     }
 
     /**
@@ -114,7 +114,7 @@ class block_apsolu_course extends block_base {
     private function get_student_content(stdClass $context) {
         global $DB, $USER;
 
-        $sessions = array();
+        $sessions = [];
         $countsessions = 0;
 
         // Récupère toutes les présences de l'utilisateur.
@@ -131,10 +131,10 @@ class block_apsolu_course extends block_base {
                  WHERE sessions.courseid = :courseid
                    AND sessions.sessiontime < :time
               ORDER BY sessions.sessiontime";
-        $params = array(
+        $params = [
             'courseid' => $context->instanceid,
             'time' => (time() + 8 * 7 * 24 * 60 * 60),
-            );
+            ];
         foreach ($DB->get_records_sql($sql, $params) as $session) {
             $session->str_date = userdate($session->sessiontime, '%d %b %y');
 
@@ -169,7 +169,7 @@ class block_apsolu_course extends block_base {
     private function get_teacher_content(stdClass $context) {
         global $DB;
 
-        $sessions = array();
+        $sessions = [];
         $countsessions = 0;
 
         $sql = "SELECT s.*, COUNT(p.id) AS presences
@@ -179,23 +179,23 @@ class block_apsolu_course extends block_base {
                    AND s.sessiontime < :time
               GROUP BY s.id
               ORDER BY s.sessiontime";
-        $params = array(
+        $params = [
             'courseid' => $context->instanceid,
             'time' => (time() + 8 * 7 * 24 * 60 * 60),
-            );
+            ];
         foreach ($DB->get_records_sql($sql, $params) as $session) {
             $session->str_date = userdate($session->sessiontime, '%d %b %y');
             $sessions[] = $session;
             $countsessions++;
         }
 
-        $enrols = array();
+        $enrols = [];
         $countenrols = 0;
-        $params = array(
+        $params = [
             'enrol' => 'select',
             'status' => 0,
             'courseid' => $this->page->course->id,
-            );
+            ];
 
         foreach ($DB->get_records('enrol', $params) as $enrol) {
             if (empty($enrol->name) === true) {
