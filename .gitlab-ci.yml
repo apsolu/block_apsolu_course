@@ -1,0 +1,14 @@
+---
+# yamllint disable rule:line-length
+
+variables:
+  ENABLE_BEHAT: "false"  # Non implémenté.
+
+  MOODLE_EXTRA_PLUGINS: >
+    https://github.com/apsolu/block_apsolu_dashboard.git
+    https://github.com/apsolu/enrol_select.git
+    https://github.com/apsolu/local_apsolu.git
+    https://github.com/apsolu/theme_apsolu.git
+
+include:
+  - local: "/.gitlab/moodle401.yml"
