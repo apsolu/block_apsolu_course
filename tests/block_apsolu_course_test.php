@@ -40,7 +40,7 @@ require_once($CFG->dirroot.'/blocks/apsolu_course/block_apsolu_course.php');
  * @copyright  2020 Université Rennes 2 <dsi-contact@univ-rennes2.fr>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class block_apsolu_course_test extends advanced_testcase {
+final class block_apsolu_course_test extends advanced_testcase {
     /**
      * Teste la méthode init().
      *
@@ -48,7 +48,7 @@ class block_apsolu_course_test extends advanced_testcase {
      *
      * @return void
      */
-    public function test_init() {
+    public function test_init(): void {
         $block = new block_apsolu_course();
         $block->init();
 
