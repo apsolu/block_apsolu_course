@@ -162,7 +162,9 @@ jobs:
       - name: PHPUnit tests
         if: ${{ always() }}
         run: |
-          moodle-plugin-ci phpunit --coverage-clover
+          # Note: désactive le code coverage, car ce module contient aucun des fichiers suivants: classes/*, externallib.php, lib.php, locallib.php, renderer.php et rsslib.php.
+          # moodle-plugin-ci phpunit --coverage-clover
+          moodle-plugin-ci phpunit
           moodle-plugin-ci coveralls-upload
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
