@@ -14,4 +14,5 @@ variables:
 
 include:
   # - local: "/.gitlab/moodle401.yml"
-  - local: "/.gitlab/moodle404.yml"
+  # - local: "/.gitlab/moodle404.yml"
+  - local: "/.gitlab/moodle500.yml"
