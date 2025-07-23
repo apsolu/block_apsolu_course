@@ -143,7 +143,7 @@ class block_apsolu_course extends block_base {
                 $session->css_status = sprintf('text-%s', $presences[$session->id]->color);
             } else {
                 $session->str_status = get_string('attendance_undefined', 'local_apsolu');
-                $session->css_status = 'text-left';
+                $session->css_status = 'text-start';
             }
 
             $sessions[] = $session;
