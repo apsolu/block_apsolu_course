@@ -29,7 +29,6 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_apsolu_course extends block_base {
-
     /**
      * Initialise the block.
      */
@@ -82,7 +81,7 @@ class block_apsolu_course extends block_base {
             return;
         }
 
-        $this->content = new stdClass;
+        $this->content = new stdClass();
         $this->content->text = '';
 
         if (has_capability('moodle/course:update', $context)) {

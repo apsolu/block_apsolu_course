@@ -31,8 +31,8 @@ defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
 
-require_once($CFG->dirroot.'/blocks/moodleblock.class.php');
-require_once($CFG->dirroot.'/blocks/apsolu_course/block_apsolu_course.php');
+require_once($CFG->dirroot . '/blocks/moodleblock.class.php');
+require_once($CFG->dirroot . '/blocks/apsolu_course/block_apsolu_course.php');
 
 /**
  * Classe PHPUnit permettant de tester la classe block_apsolu_course.
