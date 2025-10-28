@@ -66,7 +66,7 @@
 {{#count_enrols}}
 <div class="text-center">
     <div class="btn-group" id="block-apsolu-course-edit-enrol-a">
-        <a href="{{wwwroot}}/enrol/select/manage.php?courseid={{courseid}}" class="btn btn-primary btn-xs">{{#str}}manage_my_students, block_apsolu_course{{/str}}</a>
+        <a href="{{wwwroot}}/enrol/select/manage.php?courseid={{courseid}}" class="btn btn-primary btn-xs"><i class="icon fa fa-user-plus fa-fw navicon" aria-hidden="true"></i>{{#str}}manage_my_students, block_apsolu_course{{/str}}</a>
         {{# many_enrols }}
         <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="visually-hidden">{{#str}}enrolment_list, enrol_select{{/str}}</span></button>
         <div class="apsolu-dropdown-menu dropdown-menu dropdown-menu-end">
@@ -80,7 +80,7 @@
 {{/count_enrols}}
 <hr />
 
-<p id="block-apsolu-badge-action" class="text-center"><a href="{{wwwroot}}/local/apsolu/attendance/edit.php?courseid={{courseid}}" class="btn btn-primary btn-xs" id="block-apsolu-course-edit-attendance-a">{{#str}}set_presences, block_apsolu_course{{/str}}</a></p>
+<p id="block-apsolu-badge-action" class="text-center"><a href="{{wwwroot}}/local/apsolu/attendance/edit.php?courseid={{courseid}}" class="btn btn-primary btn-xs" id="block-apsolu-course-edit-attendance-a"><i class="icon fa fa-list-check fa-fw navicon" aria-hidden="true"></i>{{#str}}set_presences, block_apsolu_course{{/str}}</a></p>
 
 <hr />
 
