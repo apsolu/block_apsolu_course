@@ -196,7 +196,7 @@ class block_apsolu_course extends block_base {
             'courseid' => $this->page->course->id,
             ];
 
-        foreach ($DB->get_records('enrol', $params) as $enrol) {
+        foreach ($DB->get_records('enrol', $params, 'enrolstartdate,enrolenddate') as $enrol) {
             if (empty($enrol->name) === true) {
                 $enrol->name = 'Gérer mes étudiants';
             }
@@ -211,6 +211,7 @@ class block_apsolu_course extends block_base {
         $data->count_sessions = $countsessions;
         $data->enrols = $enrols;
         $data->count_enrols = $countenrols;
+        $data->many_enrols = ($countenrols > 1);
 
         return $data;
     }
