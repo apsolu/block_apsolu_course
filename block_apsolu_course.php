@@ -210,9 +210,6 @@ class block_apsolu_course extends block_base {
         $data->sessions = $sessions;
         $data->count_sessions = $countsessions;
         $data->enrols = $enrols;
-        if ($countenrols !== 0) {
-            $data->enrolid = $enrols[0]->id;
-        }
         $data->count_enrols = $countenrols;
 
         return $data;
