@@ -15,17 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Bloc affichant dans un cours un résumé des présences aux enseignants et les présences de l'étudiant.
+ * Classe représentant le bloc block_apsolu_course.
+ * Ce bloc sert à afficher dans un cours un résumé des présences aux enseignants et les présences de l'étudiant.
  *
  * @package    block_apsolu_course
- * @copyright  2016 Université Rennes 2 <dsi-contact@univ-rennes2.fr>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-/**
- * Classe représentant le bloc block_apsolu_course.
- *
- * @copyright 2016 Université Rennes 2 <dsi-contact@univ-rennes2.fr>
+ * @copyright 2016 Université Rennes 2
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_apsolu_course extends block_base {

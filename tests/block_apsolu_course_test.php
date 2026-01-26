@@ -14,14 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Test block_apsolu_course class.
- *
- * @package    block_apsolu_course
- * @copyright  2020 Université Rennes 2 <dsi-contact@univ-rennes2.fr>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 namespace block_apsolu_course;
 
 use advanced_testcase;
@@ -37,7 +29,8 @@ require_once($CFG->dirroot . '/blocks/apsolu_course/block_apsolu_course.php');
 /**
  * Classe PHPUnit permettant de tester la classe block_apsolu_course.
  *
- * @copyright  2020 Université Rennes 2 <dsi-contact@univ-rennes2.fr>
+ * @package    block_apsolu_course
+ * @copyright  2020 Université Rennes 2
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 final class block_apsolu_course_test extends advanced_testcase {
