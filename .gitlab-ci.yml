@@ -4,15 +4,16 @@
 variables:
   ENABLE_BEHAT: "false"
 
-  MOODLE_PLUGIN_INSTALL_PATH: blocks/apsolu_course
+  MOODLE_PLUGIN_INSTALL_PATH: public/blocks/apsolu_course
 
   MOODLE_EXTRA_PLUGINS: >
-    https://github.com/apsolu/block_apsolu_dashboard.git;blocks/apsolu_dashboard
-    https://github.com/apsolu/enrol_select.git;enrol/select
-    https://github.com/apsolu/local_apsolu.git;local/apsolu
-    https://github.com/apsolu/theme_apsolu.git;theme/apsolu
+    https://github.com/apsolu/block_apsolu_dashboard.git;public/blocks/apsolu_dashboard
+    https://github.com/apsolu/enrol_select.git;public/enrol/select
+    https://github.com/apsolu/local_apsolu.git;public/local/apsolu
+    https://github.com/apsolu/theme_apsolu.git;public/theme/apsolu
 
 include:
   # - local: "/.gitlab/moodle401.yml"
   # - local: "/.gitlab/moodle404.yml"
-  - local: "/.gitlab/moodle500.yml"
+  # - local: "/.gitlab/moodle500.yml"
+  - local: "/.gitlab/moodle502.yml"
